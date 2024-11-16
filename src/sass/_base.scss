@@ -1,0 +1,39 @@
+//Colores
+$color-background-fallback: #912346;
+$color-primary-text: #fff;
+$color-complementary-light: #5DC2BD;
+$color-complementary-dark: #2C5E5B;
+
+$color-content-bg: #311429;
+$color-content-bg-dark: #2C0C23;
+$color-content-secondary: #C92F58;
+$color-content-complementary: #EFE5C3;
+
+$color-cupon-bg: linear-gradient(to right, #fff, #BDBDBD);
+$color-cupon-text: #000;
+
+$color-warning-bg: #C51414;
+$color-warning-text: #fff;
+
+$color-button-bg: #339B95;
+$color-button-text: #fff;
+
+$color-footer-bg: #000;
+$color-footer-text: #BBB;
+$color-footer-link: #fff;
+
+
+
+//
+*,
+*::after,
+*::before {
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: content-box;
+    font-size: 65,5%; // 1rem = 10px
+}
