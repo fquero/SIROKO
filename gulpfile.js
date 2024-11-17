@@ -1,24 +1,216 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+import gulp from "gulp";
+import sass from "gulp-sass";
+import sassModule from "sass";
+import plumber from "gulp-plumber";
+
+import svgmin from "gulp-svgmin";
+import svgSprite from "gulp-svg-sprite";
+
+import resize from "gulp-image-resize";
+import imagemin from "gulp-imagemin";
+import webp from "gulp-webp";
 
 //Rutas
 const paths = {
-    sass: './src/sass/**/*.scss',
-    css: './dist/css'
+  index: {
+    src: "./src/index.html",
+    dest: "./dist",
+  },
+  style: {
+    sass: "./src/sass/**/*.scss",
+    css: "./dist/css",
+  },
+  svg: {
+    src: "./src/img/svg/**/*.svg",
+    dest: "./dist/img/svg",
+  },
+  img: {
+    src: "./src/img/**/*.{png,jpg,jpeg,gif,webp}",
+    dest: "./dist/img",
+  },
+  fonts: {
+    src: "./src/fonts/**/*",
+    dest: "./dist/fonts",
+  },
 };
+//////////////////////////////////////    INDEX      /////////////////////////////////////////////////
+function copyIndexFile() {
+  return gulp.src(paths.index.src).pipe(gulp.dest(paths.index.dest));
+}
+export const copyIndex = copyIndexFile;
 
+//////////////////////////////////////    ESTILO //////////////////////////////////////////////////
 //Compilar Sass
-function sassCompile() {
-    return gulp.src(paths.sass)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(paths.css));
+function sassCompileFiles() {
+  return gulp
+    .src(paths.style.sass)
+    .pipe(
+      plumber({
+        errorHandler: (err) => {
+          console.log(err.message);
+          this.emit("end");
+        },
+      })
+    )
+    .pipe(sass(sassModule).sync())
+    .pipe(gulp.dest(paths.style.css));
 }
 
 //Observar Sass
-function watchSass() {
-    gulp.watch(paths.sass, sassCompile);
+function watchSassFiles() {
+  gulp.watch(paths.style.sass, sassCompile);
 }
 
-//Tareas
-//exports.watchSass = gulp.series(sassCompile, watchSass); 
-exports.sassCompile = sassCompile;
+//Tareas Sass
+export const watchSass = gulp.series(
+  copyIndexFile,
+  sassCompileFiles,
+  watchSassFiles
+);
+export const sassCompile = sassCompileFiles;
+
+//////////////////////////////////////    SVG      //////////////////////////////////////////////////
+function svgOptimizarFiles() {
+  return gulp
+    .src(paths.svg.src)
+    .pipe(
+      svgmin({
+        plugins: [
+          {
+            name: "preset-default",
+            params: {
+              overrides: {
+                // Mantener el viewBox
+                removeViewBox: false,
+                // Eliminar width y height
+                removeDimensions: true,
+              },
+            },
+          },
+        ],
+      })
+    )
+    .pipe(gulp.dest(paths.svg.dest));
+}
+
+function svgCreaSpriteFiles() {
+  return gulp
+    .src(paths.svg.src)
+    .pipe(
+      svgSprite({
+        mode: {
+          symbol: {
+            sprite: "../logo_sprite.svg",
+          },
+        },
+      })
+    )
+    .pipe(gulp.dest(paths.svg.dest));
+}
+
+//Tareas SVG
+export const svgOptimizar = svgOptimizarFiles;
+export const svgCreaSprite = svgCreaSpriteFiles;
+
+//////////////////////////////////////    IMÁGENES //////////////////////////////////////////////////
+async function imgResizeFiles() {
+  return gulp
+    .src(paths.img.src)
+    .pipe(
+      resize({
+        width: 1920,
+        upscale: false,
+        suffix: "-desktop-lg",
+      })
+    )
+    .pipe(imagemin())
+    .pipe(webp())
+    .pipe(gulp.dest(paths.img.dest))
+
+    .pipe(
+      resize({
+        width: 1280,
+        upscale: false,
+        suffix: "-desktop",
+      })
+    )
+    .pipe(imagemin())
+    .pipe(webp())
+    .pipe(gulp.dest(paths.img.dest))
+
+    .pipe(
+      resize({
+        width: 1024,
+        upscale: false,
+        suffix: "-tablet",
+      })
+    )
+    .pipe(imagemin())
+    .pipe(webp())
+    .pipe(gulp.dest(paths.img.dest))
+
+    .pipe(
+      resize({
+        width: 750,
+        upscale: false,
+        suffix: "-mobile",
+      })
+    )
+    .pipe(imagemin())
+    .pipe(webp())
+    .pipe(gulp.dest(paths.img.dest))
+
+    .pipe(
+      resize({
+        width: 1920,
+        upscale: false,
+        suffix: "-desktop-lg-2x",
+      })
+    )
+    .pipe(imagemin())
+    .pipe(webp())
+    .pipe(gulp.dest(paths.img.dest))
+
+    .pipe(
+      resize({
+        width: 1280,
+        upscale: false,
+        suffix: "-desktop-2x",
+      })
+    )
+    .pipe(imagemin())
+    .pipe(webp())
+    .pipe(gulp.dest(paths.img.dest))
+
+    .pipe(
+      resize({
+        width: 1024,
+        upscale: false,
+        suffix: "-tablet-2x",
+      })
+    )
+    .pipe(imagemin())
+    .pipe(webp())
+    .pipe(gulp.dest(paths.img.dest))
+
+    .pipe(
+      resize({
+        width: 750,
+        upscale: false,
+        suffix: "-mobile-2x",
+      })
+    )
+    .pipe(imagemin())
+    .pipe(webp())
+    .pipe(gulp.dest(paths.img.dest));
+}
+
+export const imgResize = imgResizeFiles;
+
+//////////////////////////////////////    FONT      /////////////////////////////////////////////////
+function copyFontsFiles() {
+  return gulp
+    .src(paths.fonts.src) // Todos los archivos dentro de src/fonts
+    .pipe(gulp.dest(paths.fonts.dest)); // Los copia a dist/fonts
+}
+export const copyFonts = copyFontsFiles;
