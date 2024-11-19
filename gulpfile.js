@@ -10,6 +10,9 @@ import resize from "gulp-image-resize";
 import imagemin from "gulp-imagemin";
 import webp from "gulp-webp";
 
+import ts from "gulp-typescript";
+import uglify from "gulp-uglify";
+
 //Rutas
 const paths = {
   index: {
@@ -31,6 +34,10 @@ const paths = {
   fonts: {
     src: "./src/fonts/**/*",
     dest: "./dist/fonts",
+  },
+  ts: {
+    src: "./src/**/*.ts",
+    dest: "./dist",
   },
 };
 //////////////////////////////////////    INDEX      /////////////////////////////////////////////////
@@ -63,7 +70,7 @@ function watchSassFiles() {
 
 //Tareas Sass
 export const watchSass = gulp.series(
-  copyIndexFile,
+  //copyIndexFile,
   sassCompileFiles,
   watchSassFiles
 );
@@ -214,3 +221,21 @@ function copyFontsFiles() {
     .pipe(gulp.dest(paths.fonts.dest)); // Los copia a dist/fonts
 }
 export const copyFonts = copyFontsFiles;
+
+//////////////////////////////////////    TYPESCRIPT      /////////////////////////////////////////////////
+const tsProject = ts.createProject("tsconfig.json");
+
+function compilaTsFiles() {
+  return gulp
+    .src(paths.ts.src)
+    .pipe(tsProject())
+    .pipe(gulp.dest(paths.ts.dest));
+}
+
+export const compilaTs = compilaTsFiles;
+
+//Observar Typescript
+function watchTsFiles() {
+  gulp.watch(paths.ts.src, compilaTs);
+}
+export const watchTs = watchTsFiles;

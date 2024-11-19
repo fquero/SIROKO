@@ -173,13 +173,7 @@ body {
 .opcion {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  /*&:hover {
-    background-color: $color-content-complementary;
-
-    & * {
-      color: $color-content-bg-dark;
-    }
-  }*/
+  transition: background-color 0.7s;
 }
 .opcion__radio-input {
   display: none;
@@ -206,8 +200,8 @@ body {
 .opcion__radio-button::after {
   content: "";
   display: block;
-  height: 1.3rem;
-  width: 1.3rem;
+  height: 1.2rem;
+  width: 1.2rem;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -223,6 +217,12 @@ body {
 .opcion:has(.opcion__radio-input:is(:checked)) {
   background-color: #c92f58;
 }
+.opcion:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /*& * {
+    color: $color-content-bg-dark;
+  }*/
+}
 
 .btn {
   font-family: "Inter", sans-serif;
@@ -235,6 +235,10 @@ body {
   border-radius: 4px;
   text-decoration: none;
   text-align: center;
+  transition: all 0.1s;
+}
+.btn:hover {
+  font-size: 1.7rem;
 }
 .btn i {
   vertical-align: middle;
