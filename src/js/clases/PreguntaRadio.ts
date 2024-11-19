@@ -32,6 +32,8 @@ export class PreguntaRadio implements IPregunta {
   }
 
   renderizarInput(): HTMLElement {
-    return document.createElement("input");
+    const div = document.createElement("div");
+    div.textContent = "Renderizando pregunta...";
+    return div;
   }
 }

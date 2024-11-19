@@ -1,3 +1,5 @@
+import { Respuesta } from "../types/RespuestaType";
+
 export interface IRespuestasManager {
   /*
         Determina si ya se ha iniciado el control de respuestas.
@@ -7,10 +9,13 @@ export interface IRespuestasManager {
   isControlIniciado(): boolean;
 
   //Crea set de respuestas para actualizar y consultar sus valores
-  crearSetDeRespuestas(cantidad: number): boolean;
+  crearSetDeRespuestas(cantidad: number): Array<Respuesta>;
+
+  //Recupera set de respuestas
+  recuperarSetDeRespuestas(cantidad: number): Array<Respuesta>;
 
   //Devuelve los valores de las respuestas
-  getRespuestas(): Record<string, string | number | boolean | null>;
+  getRespuestas(): Array<Respuesta>;
 
   //Actualiza el valor de una respuesta
   procesarRespuesta(

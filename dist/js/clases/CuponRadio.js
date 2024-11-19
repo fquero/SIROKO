@@ -7,7 +7,7 @@ export class CuponRadio {
         });
     }
     getPreguntas() {
-        return [];
+        return this.preguntas;
     }
     getTiempoValidez() {
         return this.minutos;

@@ -85,14 +85,14 @@ body {
   font-style: normal;
   font-display: swap;
 }
-.contenedor {
+#contenedor {
   max-width: 81vw;
   margin: 0 auto;
   padding: 3.5rem;
   flex: 1;
 }
 @media only screen and (min-width: 64.0625em) and (max-width: 90em) {
-  .contenedor {
+  #contenedor {
     max-width: 94rem;
   }
 }

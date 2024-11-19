@@ -27,7 +27,7 @@ export class CuponRadio implements ICupon {
   }
 
   getPreguntas(): Array<PreguntaRadio> {
-    return [];
+    return this.preguntas;
   }
 
   getTiempoValidez(): number {
