@@ -7,11 +7,9 @@ export class ControlLocalStorage implements IRespuestasManager {
   constructor(cantidad: number) {
     try {
       this.respuestas = [];
-      if (this.isControlIniciado()) {
-        this.respuestas = this.crearSetDeRespuestas(cantidad);
-      } else {
-        this.respuestas = this.recuperarSetDeRespuestas(cantidad);
-      }
+      this.respuestas = !this.isControlIniciado()
+        ? this.crearSetDeRespuestas(cantidad)
+        : this.recuperarSetDeRespuestas(cantidad);
     } catch (error) {
       console.log(error);
       this.respuestas = [];
@@ -20,7 +18,7 @@ export class ControlLocalStorage implements IRespuestasManager {
 
   //Consulta si las variables de respuestas están definidas en local storage
   isControlIniciado(): boolean {
-    return true;
+    return localStorage.getItem("SirokoP0") !== null;
   }
 
   //Crea variables localStorage para almacenar respuestas de cada pregunta
@@ -65,10 +63,21 @@ export class ControlLocalStorage implements IRespuestasManager {
     return this.respuestas;
   }
 
-  procesarRespuesta(
-    nombre: string,
-    valor: string | number | boolean | null
-  ): boolean {
-    return true;
+  procesarRespuesta(nombre: string, valor: string): boolean {
+    try {
+      const respuestaEncontrada = this.respuestas.find(
+        (respuesta) => respuesta.idpregunta === nombre
+      );
+
+      if (respuestaEncontrada) {
+        respuestaEncontrada.respuesta = valor;
+        localStorage.setItem(nombre, valor);
+      }
+
+      return true;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   }
 }

@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prueba Técnica Frontend Siroko :: Fran Quero</title>
 
+    <link rel="icon" href="./src/favicon/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="alternate icon"
+      sizes="16x16"
+      href="./src/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="./src/favicon/apple-touch-icon.png" />
+
     <link rel="stylesheet" href="dist/css/main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap"
@@ -24,7 +33,7 @@
       href="dist/fonts/LiberatorSIROKO-Heavy.woff2"
       as="font"
       type="font/woff2"
-      crossorigin
+      crossorigin="anonymous"
     />
 
     <script type="module" src="./dist/main.js" defer></script>
@@ -41,71 +50,36 @@
         </picture>
       </header>
       <!--
-      <section class="encabezado">
-        <span class="encabezado__indicador">Paso 1 de 2</span>
-        <h1 class="encabezado__titulo">¡Vamos allá!</h1>
-        <p class="encabezado__contenido">
-          Has llegado hasta el test de Siroko. Responde las siguientes preguntas
-          y genera tu código premiado a medida.
-        </p>
-      </section>
-      <section class="contenido">
-        <h2 class="contenido__subtitulo">Uso Siroko desde...</h2>
-        <form class="formulario">
-          <div class="opcion">
-            <input
-              type="radio"
-              class="opcion__radio-input"
-              id="op1"
-              name="q1"
-            />
-            <label for="op1" class="opcion__radio-label">
-              <span class="opcion__radio-button"></span>
-              Segaría a navaja
-            </label>
-          </div>
-          <div class="opcion">
-            <input
-              type="radio"
-              class="opcion__radio-input"
-              id="op2"
-              name="q1"
-            />
-            <label for="op2" class="opcion__radio-label">
-              <span class="opcion__radio-button"></span>
-              Rechazaría un cachopo
-            </label>
-          </div>
-          <div class="opcion">
-            <input
-              type="radio"
-              class="opcion__radio-input"
-              id="op3"
-              name="q1"
-            />
-            <label for="op3" class="opcion__radio-label">
-              <span class="opcion__radio-button"></span>
-              Renunciaría a mis tierras
-            </label>
-          </div>
-          <div class="opcion">
-            <input
-              type="radio"
-              class="opcion__radio-input"
-              id="op4"
-              name="q1"
-            />
-            <label for="op4" class="opcion__radio-label">
-              <span class="opcion__radio-button"></span>
-              Regalaría una ternera
-            </label>
-          </div>
-          <a href="#" id="btnSend" class="btn"
-            >Siguiente <i class="material-icons">arrow_right_alt</i>
-          </a>
-        </form>
-      </section>
+      contenido dinámico
       -->
+      <!--cupon temp----------------------------------------------------------------------
+      <section class="contenido">
+        <h2 class="contenido__subtitulo">Lo prometido es deuda</h2>
+        <div class="cupon">
+          <div class="codigo">
+            <div class="codigo__texto">ASDF</div>
+            <a href="#" class="codigo__boton">Copiar</a>
+          </div>
+          <p class="cupon__descrip">
+            Introduce este código en tu próxima compra para conseguir tu premio.
+            ¡Disponible durante 20 minutos!
+          </p>
+          <div class="crono">
+            <div class="crono__reloj">
+              <i class="material-icons">access_alarm</i> <span>20:00</span>
+            </div>
+            <div class="crono__caducado">
+              <i class="material-icons">access_alarm</i> Código caducado.
+              <a href="#" class="crono__caducado__reiniciar">Reiniciar</a>
+            </div>
+          </div>
+          <a href="https://siroko.com" id="btnSend" class="btn"
+            >Ir a siroko.com <i class="material-icons">arrow_right_alt</i>
+          </a>
+        </div>
+        
+      </section>
+      cupon temp---------------------------------------------------------------------->
     </div>
     <!-- contenedor -->
     <footer class="footer">

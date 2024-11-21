@@ -1,13 +1,11 @@
 export class ControlLocalStorage {
+    respuestas;
     constructor(cantidad) {
         try {
             this.respuestas = [];
-            if (this.isControlIniciado()) {
-                this.respuestas = this.crearSetDeRespuestas(cantidad);
-            }
-            else {
-                this.respuestas = this.recuperarSetDeRespuestas(cantidad);
-            }
+            this.respuestas = !this.isControlIniciado()
+                ? this.crearSetDeRespuestas(cantidad)
+                : this.recuperarSetDeRespuestas(cantidad);
         }
         catch (error) {
             console.log(error);
@@ -16,7 +14,7 @@ export class ControlLocalStorage {
     }
     //Consulta si las variables de respuestas están definidas en local storage
     isControlIniciado() {
-        return true;
+        return localStorage.getItem("SirokoP0") !== null;
     }
     //Crea variables localStorage para almacenar respuestas de cada pregunta
     crearSetDeRespuestas(cantidad) {
@@ -58,6 +56,17 @@ export class ControlLocalStorage {
         return this.respuestas;
     }
     procesarRespuesta(nombre, valor) {
-        return true;
+        try {
+            const respuestaEncontrada = this.respuestas.find((respuesta) => respuesta.idpregunta === nombre);
+            if (respuestaEncontrada) {
+                respuestaEncontrada.respuesta = valor;
+                localStorage.setItem(nombre, valor);
+            }
+            return true;
+        }
+        catch (error) {
+            console.log(error);
+            return false;
+        }
     }
 }

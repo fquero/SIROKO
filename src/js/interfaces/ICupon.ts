@@ -1,3 +1,4 @@
+import { Respuesta } from "../types/RespuestaType.js";
 import { IPregunta } from "./IPregunta.js";
 
 export interface ICupon {
@@ -8,5 +9,8 @@ export interface ICupon {
   getTiempoValidez(): number;
 
   //Genera el código del cupon
-  generarCodigo(respuestas: Array<string | number | boolean | null>): string;
+  generarCodigo(respuestas: Array<Respuesta>): string;
+
+  //Persiste el código
+  persistirCodigo(codigo: string, fecha: Date): boolean;
 }

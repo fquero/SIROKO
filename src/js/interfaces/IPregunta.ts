@@ -9,5 +9,5 @@ export interface IPregunta {
   getTextoPregunta(): string;
 
   //renderiza el input de la pregunta
-  renderizarInput(): HTMLElement;
+  renderizarInput(idpregunta: number): HTMLElement;
 }

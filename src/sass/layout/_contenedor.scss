@@ -9,7 +9,7 @@
 
   @include respond(desktop) {
     & {
-      max-width: 94rem;
+      width: 94rem;
     }
   }
 }
