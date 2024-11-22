@@ -2,7 +2,9 @@ import { PreguntaRadio } from "./PreguntaRadio.js";
 export class CuponRadio {
     minutos;
     preguntas;
+    codigo;
     constructor(minutos, preguntas) {
+        this.codigo = "";
         this.minutos = minutos;
         this.preguntas = preguntas.map((pregunta) => {
             return new PreguntaRadio(pregunta.titular, pregunta.descripcion, pregunta.textoPregunta, pregunta.opciones);
@@ -43,6 +45,7 @@ export class CuponRadio {
         const codigo2 = filtrada.slice(-4).toUpperCase();
         const codigoGenerado = [codigo1, codigo2].join("");
         this.persistirCodigo(codigoGenerado, new Date());
+        this.codigo = codigoGenerado;
         return codigoGenerado;
     }
     /**
@@ -61,5 +64,8 @@ export class CuponRadio {
             .padStart(2, "0")}:${fecha.getMinutes().toString().padStart(2, "0")}`;
         localStorage.setItem("horaCupon", hora);
         return true;
+    }
+    getCodigo() {
+        return this.codigo;
     }
 }

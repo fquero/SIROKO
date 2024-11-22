@@ -29,6 +29,24 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer !important;
+  position: relative;
+
+  &::after {
+    content: "¡Copiado!";
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    //transform: translate(-50%, -50%);
+    color: $color-warning-bg;
+    font-size: 1.7rem;
+    opacity: 0;
+  }
+
+  &__copiado::after {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fundido 1s ease-in-out;
+  }
 
   &__texto {
     font-size: 3rem;

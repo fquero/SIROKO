@@ -13,4 +13,7 @@ export interface ICupon {
 
   //Persiste el código
   persistirCodigo(codigo: string, fecha: Date): boolean;
+
+  //Devuelve el código generado
+  getCodigo(): string;
 }

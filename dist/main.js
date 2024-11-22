@@ -48,4 +48,15 @@ function eventosCupon() {
         // Inicio cuenta atrás en el reloj
         iniciarCuentaAtras(localStorage.getItem("horaCupon"), cupon.getTiempoValidez(), "crono__reloj", cp.anularCupon.bind(cp));
     }, 0); // Ejecutar en el siguiente ciclo de eventos
+    // Copiar al portapapeles
+    async function copiarCupon() {
+        await navigator.clipboard.writeText(cupon.getCodigo());
+        this.classList.add("codigo__copiado");
+        setTimeout(() => {
+            this.classList.remove("codigo__copiado");
+        }, 1000);
+    }
+    //clic copiado
+    const btnCopiar = document.querySelector(".codigo");
+    btnCopiar.addEventListener("click", copiarCupon);
 }

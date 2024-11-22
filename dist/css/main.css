@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 0 - 600px:      Phone
 600 - 1024px:   Tablet
@@ -136,6 +137,21 @@ body {
   justify-content: space-between;
   align-items: center;
   cursor: pointer !important;
+  position: relative;
+}
+.codigo::after {
+  content: "¡Copiado!";
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  color: #c51414;
+  font-size: 1.7rem;
+  opacity: 0;
+}
+.codigo__copiado::after {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fundido 1s ease-in-out;
 }
 .codigo__texto {
   font-size: 3rem;

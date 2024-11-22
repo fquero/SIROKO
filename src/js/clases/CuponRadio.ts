@@ -6,6 +6,7 @@ import { Respuesta } from "../types/RespuestaType.js";
 export class CuponRadio implements ICupon {
   private minutos: number;
   private preguntas: Array<PreguntaRadio>;
+  private codigo: string;
 
   constructor(
     minutos: number,
@@ -16,6 +17,7 @@ export class CuponRadio implements ICupon {
       opciones: Array<Opcion>;
     }>
   ) {
+    this.codigo = "";
     this.minutos = minutos;
     this.preguntas = preguntas.map((pregunta) => {
       return new PreguntaRadio(
@@ -73,6 +75,8 @@ export class CuponRadio implements ICupon {
 
     this.persistirCodigo(codigoGenerado, new Date());
 
+    this.codigo = codigoGenerado;
+
     return codigoGenerado;
   }
 
@@ -95,5 +99,9 @@ export class CuponRadio implements ICupon {
     localStorage.setItem("horaCupon", hora);
 
     return true;
+  }
+
+  getCodigo(): string {
+    return this.codigo;
   }
 }
