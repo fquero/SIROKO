@@ -42,6 +42,11 @@ function eventosPreguntas(): void {
       //Renderizar siguiente paso (nueva pregunta o cupón)
       subcontenedor.innerHTML = "";
       subcontenedor.appendChild(cp.render());
+
+      if (localStorage.getItem("codigoCupon")) {
+        console.log("Cupon creado,recargo");
+        window.location.reload();
+      }
     }
   });
 }
@@ -49,7 +54,7 @@ function eventosPreguntas(): void {
 function eventosCupon(): void {
   // Inicio cuenta atrás en el reloj
   // Pasamos el contenedor `reloj` donde se actualizará el tiempo
-  iniciarCuentaAtras("21:30", 90, "crono__reloj", () => {
+  iniciarCuentaAtras("01:01", 90, "crono__reloj", () => {
     console.log("¡Tiempo agotado!");
   });
 }
