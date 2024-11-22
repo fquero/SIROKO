@@ -117,7 +117,7 @@ export class CuponManager {
             <a href="#" class="crono__caducado__reiniciar">Reiniciar</a>
           </div>
         </div>
-        <a href="https://siroko.com" id="btnSend" class="btn">
+        <a href="https://siroko.com" id="btnSend" class="btn" target="_blank" onclick="alert('Gracias por la oportunidad! - Fran :)');">
           Ir a siroko.com <i class="material-icons">arrow_right_alt</i>
         </a>
       </div>
@@ -146,7 +146,7 @@ export class CuponManager {
       ".crono__caducado"
     ) as HTMLElement | null;
     if (caducado) {
-      caducado.style.display = "block";
+      caducado.style.display = "flex";
     }
   }
 }

@@ -1,6 +1,6 @@
 export const preguntas = [
   {
-    titular: "Vamos allá",
+    titular: "¡Vamos allá!",
     descripcion:
       "Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código premiado a medida.",
     textoPregunta: "Uso Siroko desde...",

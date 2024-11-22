@@ -27,7 +27,7 @@ html {
 
 body {
   box-sizing: content-box;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: "Inconsolata", sans-serif;
   display: flex;
   align-items: center;
@@ -96,14 +96,6 @@ body {
   transform: scale(0.99);
 }
 
-/*@font-face {
-  font-family: "LiberatorSiroko";
-  src: url("../fonts/LiberatorSiroko.woff2") format("woff2"),
-    url("../fonts/LiberatorSiroko.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-*/
 @font-face {
   font-family: "Liberator SIROKO";
   src: url("../fonts/LiberatorSIROKO-Heavy.eot");
@@ -203,9 +195,9 @@ body {
   margin-bottom: 2.5rem;
 }
 .encabezado__indicador {
-  font-family: "Iconsolata", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
   color: #2c5e5b;
   text-transform: uppercase;
   display: inline-block;
@@ -216,12 +208,13 @@ body {
 .encabezado__titulo {
   font-family: "Liberator SIROKO", sans-serif;
   font-size: 3.5rem;
+  font-weight: 400;
   color: #fff;
   text-transform: uppercase;
   margin: 1.5rem 0 2.5rem;
 }
 .encabezado__contenido {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: "Inconsolata", sans-serif;
 }
 
@@ -241,7 +234,7 @@ body {
 }
 .opcion__radio-label {
   font-family: "Iconsolata", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #fff;
   cursor: pointer;
   position: relative;
@@ -286,14 +279,13 @@ body {
 }
 
 #contenedor {
-  width: 81vw;
-  max-width: 81vw;
+  width: 80vw;
   padding: 3.5rem;
   flex: 1;
 }
-@media only screen and (min-width: 64.0625em) and (max-width: 90em) {
+@media only screen and (min-width: 64.0625em) and (max-width: 90em) and (min-width: 90.0625em) {
   #contenedor {
-    width: 94rem;
+    max-width: 94rem;
   }
 }
 
@@ -304,7 +296,7 @@ body {
 }
 .contenido__subtitulo {
   font-family: "Inter", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #efe5c3;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -320,21 +312,19 @@ body {
   max-width: 81vw;
   margin: 0 auto;
   padding: 5rem 3.5rem;
+  width: 80vw;
+  padding: 3.5rem;
+  flex: 1;
 }
-@media only screen and (min-width: 64.0625em) and (max-width: 90em) {
+@media only screen and (min-width: 64.0625em) and (max-width: 90em) and (min-width: 90.0625em) {
   .footer__contenedor {
-    max-width: 74rem;
-  }
-}
-@media only screen and (min-width: 90.0625em) {
-  .footer__contenedor {
-    max-width: 74rem;
+    max-width: 94rem;
   }
 }
 .footer__contenido {
   color: #bbb;
-  font-family: "Iconsolata", sans-serif;
-  font-size: 1.8rem;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 1.6rem;
 }
 .footer__link {
   color: #fff;

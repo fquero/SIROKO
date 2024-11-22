@@ -11,21 +11,22 @@
     margin: 0 auto;
     padding: 5rem 3.5rem;
 
+    width: 80vw;
+    padding: 3.5rem;
+    flex: 1;
+
     @include respond(desktop) {
-      & {
-        max-width: 74rem;
-      }
-    }
-    @include respond(desktop-lg) {
-      & {
-        max-width: 74rem;
+      @include respond(desktop-lg) {
+        & {
+          max-width: 94rem;
+        }
       }
     }
   }
 
   &__contenido {
     color: $color-footer-text;
-    font-family: "Iconsolata", sans-serif;
+    font-family: $base-font;
     font-size: $base-font-size;
   }
 

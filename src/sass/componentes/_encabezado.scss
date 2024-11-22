@@ -4,9 +4,9 @@
   margin-bottom: 2.5rem;
 
   &__indicador {
-    font-family: "Iconsolata", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
+    font-family: $secondary-font;
+    font-size: 1.1rem;
+    font-weight: 900;
     color: $color-complementary-dark;
     text-transform: uppercase;
 
@@ -20,6 +20,7 @@
   &__titulo {
     font-family: $title-font;
     font-size: 3.5rem;
+    font-weight: 400;
     color: $color-primary-text;
     text-transform: uppercase;
     margin: 1.5rem 0 2.5rem;
