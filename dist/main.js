@@ -31,7 +31,8 @@ function eventosPreguntas() {
             control.procesarRespuesta(idpregunta, seleccion.value);
             //Renderizar siguiente paso (nueva pregunta o cupón)
             subcontenedor.innerHTML = "";
-            subcontenedor.appendChild(cp.render());
+            //subcontenedor.appendChild(cp.render());
+            subcontenedor.innerHTML = cp.render().innerHTML;
             if (localStorage.getItem("codigoCupon")) {
                 console.log("Cupon creado,recargo");
                 location.reload();

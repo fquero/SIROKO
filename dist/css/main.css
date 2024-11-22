@@ -26,8 +26,8 @@ html {
 
 body {
   box-sizing: content-box;
-  font-size: 1.6rem;
-  font-family: "Iconsolata", sans-serif;
+  font-size: 1.8rem;
+  font-family: "Inconsolata", sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -202,10 +202,11 @@ body {
   font-size: 3.5rem;
   color: #fff;
   text-transform: uppercase;
-  margin: 1rem 0 2.5rem;
+  margin: 1.5rem 0 2.5rem;
 }
 .encabezado__contenido {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-family: "Inconsolata", sans-serif;
 }
 
 .formulario {
@@ -224,7 +225,7 @@ body {
 }
 .opcion__radio-label {
   font-family: "Iconsolata", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #fff;
   cursor: pointer;
   position: relative;
@@ -269,6 +270,7 @@ body {
 }
 
 #contenedor {
+  width: 81vw;
   max-width: 81vw;
   padding: 3.5rem;
   flex: 1;
@@ -286,7 +288,7 @@ body {
 }
 .contenido__subtitulo {
   font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #efe5c3;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -316,14 +318,14 @@ body {
 .footer__contenido {
   color: #bbb;
   font-family: "Iconsolata", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 .footer__link {
   color: #fff;
 }
 
 .header {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 .header__logo {
   display: block;
