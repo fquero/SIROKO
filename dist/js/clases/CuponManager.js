@@ -30,7 +30,8 @@ export class CuponManager {
         const indicador = `Paso ${respuestasRecibidas.length + 1} de ${this.cupon.getPreguntas().length}`;
         //Control type descrip de pregunta
         const descripcion = pregunta.getDescrip() ?? "";
-        const preguntaHTML = crearElementoHTML("div", "", "", "subcontenedor");
+        const preguntaHTML = document.querySelector(".subcontenedor") ??
+            crearElementoHTML("div", "subcontenedor", "", "");
         //Cabecera
         const cabecera = crearElementoHTML("section", "encabezado");
         cabecera.innerHTML = `

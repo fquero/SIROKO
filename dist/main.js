@@ -21,7 +21,7 @@ else {
     eventosCupon();
 }
 function eventosPreguntas() {
-    const subcontenedor = document.querySelector("#subcontenedor");
+    const subcontenedor = document.querySelector(".subcontenedor");
     subcontenedor.addEventListener("click", (e) => {
         if (e.target.classList.contains("btn")) {
             e.preventDefault();

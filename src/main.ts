@@ -28,7 +28,7 @@ if (!localStorage.getItem("codigoCupon")) {
 }
 
 function eventosPreguntas(): void {
-  const subcontenedor = document.querySelector("#subcontenedor")!;
+  const subcontenedor = document.querySelector(".subcontenedor")!;
   subcontenedor.addEventListener("click", (e) => {
     if ((e.target as HTMLElement).classList.contains("btn")) {
       e.preventDefault();

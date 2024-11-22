@@ -46,7 +46,9 @@ export class CuponManager {
     //Control type descrip de pregunta
     const descripcion: string | undefined = pregunta.getDescrip() ?? "";
 
-    const preguntaHTML = crearElementoHTML("div", "", "", "subcontenedor");
+    const preguntaHTML: HTMLElement =
+      document.querySelector(".subcontenedor") ??
+      crearElementoHTML("div", "subcontenedor", "", "");
 
     //Cabecera
     const cabecera = crearElementoHTML("section", "encabezado");

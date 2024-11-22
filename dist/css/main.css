@@ -29,6 +29,7 @@ body {
   font-size: 1.6rem;
   font-family: "Iconsolata", sans-serif;
   display: flex;
+  align-items: center;
   flex-direction: column;
   background-color: #912346;
   background-image: url("../img/background-mobile.webp");
@@ -269,7 +270,6 @@ body {
 
 #contenedor {
   max-width: 81vw;
-  margin: 0 auto;
   padding: 3.5rem;
   flex: 1;
 }
@@ -296,6 +296,7 @@ body {
   background-color: #000;
   color: #bbb;
   line-height: 2.5;
+  width: 100%;
 }
 .footer__contenedor {
   max-width: 81vw;
