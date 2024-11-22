@@ -1,0 +1,12 @@
+{
+    "name": "SIROKO - OFFICIAL STORE",
+    "short_name": "SIROKO",
+    "start_url": "https://www.siroko.com",
+    "display": "standalone",
+    "theme_color": "#000",
+    "background_color":"#000",
+    "icons": [
+        { "src": "/192.png", "type": "image/png", "sizes": "192x192" },
+        { "src": "/512.png", "type": "image/png", "sizes": "512x512" }
+    ]
+}

@@ -1,0 +1,16 @@
+@use "abstracts/index" as *;
+
+#contenedor {
+  ////mobile first
+  width: 80vw;
+  padding: 3.5rem;
+  flex: 1;
+
+  @include respond(desktop) {
+    @include respond(desktop-lg) {
+      & {
+        max-width: 94rem;
+      }
+    }
+  }
+}

@@ -1,41 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prueba Técnica Frontend Siroko :: Fran Quero</title>
-</head>
-<body>
-    <header class="header">
-        <div class="header__logo"></div>
-    </header>
-    <section class="encabezado">
-        <span class="encabezado__indicador">Paso 1 de 2</span>
-        <h1 class="encabezado__titulo">¡Vamos allá!</h1>
-        <p class="encabezado__contenido">Has llegado hasta el test de Siroko. Responde las siguientes preguntas y genera tu código premiado a medida.</p>
-    </section>
-    <section class="contenido">
-        <h2 class="contenido__subtitulo">Por unas gafas Siroko yo...</h2>
-        <form class="formulario">
-            <div class="opcion">
-                <input class="opcion__radio" type="radio" name="" value="" />
-                <span class="opcion__texto">Segaría a navaja</span>
-            </div>
-            <div class="opcion">
-                <input class="opcion__radio" type="radio" name="" value="" />
-                <span class="opcion__texto">Rechazaría un cachopo</span>
-            </div>
-            <div class="opcion">
-                <input class="opcion__radio" type="radio" name="" value="" />
-                <span class="opcion__texto">Regalaría una ternera</span>
-            </div>
-            <input type="submit" value="Siguiente" />
-        </form>
-    </section>
-    <footer class="footer">
-        <p class="footer__contenido">2016-2021 Siroko Solutions S.L.</p>
-        <p class="footer__contenido">Todos los derechos reservados. <a href="" class="footer_link">Ver bases</a>.</p>
-    </footer>
 
-</body>
+    <link rel="icon" href="./dist/favicon/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="alternate icon"
+      sizes="16x16"
+      href="./dist/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="./dist/favicon/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="dist/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="preload"
+      href="dist/fonts/LiberatorSIROKO-Heavy.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <script type="module" src="./dist/main.js" defer></script>
+  </head>
+  <body>
+    <div id="contenedor">
+      <header class="header">
+        <picture class="header__logo">
+          <source
+            srcset="dist/img/svg/siroko_iso.svg"
+            media="(max-width: 37.5em)"
+          />
+          <img src="dist/img/svg/siroko_logo.svg" alt="Siroko" />
+        </picture>
+      </header>
+      <!--
+      contenido dinámico
+      -->
+    </div>
+    <!-- contenedor -->
+    <footer class="footer">
+      <div class="footer__contenedor">
+        <p class="footer__contenido">2016-2021 Siroko Solutions S.L.</p>
+        <p class="footer__contenido">
+          Todos los derechos reservados.
+          <a href="#" class="footer__link">Ver bases</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
