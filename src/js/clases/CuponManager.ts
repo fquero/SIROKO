@@ -125,4 +125,6 @@ export class CuponManager {
 
     return cuponHTML;
   }
+
+  anularCupon(): void {}
 }

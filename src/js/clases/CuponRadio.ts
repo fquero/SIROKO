@@ -81,6 +81,10 @@ export class CuponRadio implements ICupon {
   */
   persistirCodigo(codigo: string, fecha: Date): boolean {
     //Codigo
+    if (localStorage.getItem("horaCupon")) {
+      return true;
+    }
+
     localStorage.setItem("codigoCupon", codigo);
 
     //Hora HH:mm

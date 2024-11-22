@@ -6,10 +6,10 @@ import { iniciarCuentaAtras } from "./js/utils/cuentaAtras.js";
 //Datos estáticos. Se podrían extraer de BD, API, etc.
 import { preguntas } from "./preguntas.js";
 
-const minutos = 20;
+const minutosValidez = 20;
 
 //Instancio el tipo de cupón radio
-const cupon = new CuponRadio(minutos, preguntas);
+const cupon = new CuponRadio(minutosValidez, preguntas);
 
 //Controlo respuestas mediante local storage
 //se puede extender a otros métodos de control BD, API, etc.
@@ -54,7 +54,14 @@ function eventosPreguntas(): void {
 function eventosCupon(): void {
   // Inicio cuenta atrás en el reloj
   // Pasamos el contenedor `reloj` donde se actualizará el tiempo
-  iniciarCuentaAtras("01:01", 90, "crono__reloj", () => {
-    console.log("¡Tiempo agotado!");
-  });
+  // Esperar a que el DOM se haya actualizado para asegurar que el reloj esté en el contenedor
+  setTimeout(() => {
+    // Inicio cuenta atrás en el reloj
+    iniciarCuentaAtras(
+      localStorage.getItem("horaCupon")!,
+      cupon.getTiempoValidez(),
+      "crono__reloj",
+      cp.anularCupon.bind(cp)
+    );
+  }, 0); // Ejecutar en el siguiente ciclo de eventos
 }

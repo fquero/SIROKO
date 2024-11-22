@@ -50,6 +50,9 @@ export class CuponRadio {
     */
     persistirCodigo(codigo, fecha) {
         //Codigo
+        if (localStorage.getItem("horaCupon")) {
+            return true;
+        }
         localStorage.setItem("codigoCupon", codigo);
         //Hora HH:mm
         const hora = `${fecha

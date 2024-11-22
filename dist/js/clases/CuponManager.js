@@ -92,4 +92,5 @@ export class CuponManager {
         cuponHTML.append(cabecera, contenido);
         return cuponHTML;
     }
+    anularCupon() { }
 }
