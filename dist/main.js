@@ -34,7 +34,7 @@ function eventosPreguntas() {
             subcontenedor.appendChild(cp.render());
             if (localStorage.getItem("codigoCupon")) {
                 console.log("Cupon creado,recargo");
-                window.location.reload();
+                location.reload();
             }
         }
     });

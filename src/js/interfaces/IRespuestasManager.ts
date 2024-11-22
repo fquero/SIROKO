@@ -8,7 +8,7 @@ export interface IRespuestasManager {
     */
   isControlIniciado(): boolean;
 
-  //Crea set de respuestas para actualizar y consultar sus valores
+  //Crea set de respuestas en el sistema de persistencia que use
   crearSetDeRespuestas(cantidad: number): Array<Respuesta>;
 
   //Recupera set de respuestas
@@ -22,4 +22,7 @@ export interface IRespuestasManager {
     nombre: string,
     valor: string | number | boolean | null
   ): boolean;
+
+  //elimina las variables del sistema de persistencia que use
+  limpiar(): boolean;
 }

@@ -45,7 +45,7 @@ function eventosPreguntas(): void {
 
       if (localStorage.getItem("codigoCupon")) {
         console.log("Cupon creado,recargo");
-        window.location.reload();
+        location.reload();
       }
     }
   });

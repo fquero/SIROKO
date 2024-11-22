@@ -92,5 +92,20 @@ export class CuponManager {
         cuponHTML.append(cabecera, contenido);
         return cuponHTML;
     }
-    anularCupon() { }
+    anularCupon() {
+        document
+            .querySelector(".crono__caducado__reiniciar")
+            ?.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.removeItem("codigoCupon");
+            localStorage.removeItem("horaCupon");
+            this.respuestas.limpiar();
+            location.reload();
+        });
+        document.querySelector(".crono__cuentaatras")?.remove();
+        const caducado = document.querySelector(".crono__caducado");
+        if (caducado) {
+            caducado.style.display = "block";
+        }
+    }
 }

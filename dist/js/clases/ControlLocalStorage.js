@@ -69,4 +69,10 @@ export class ControlLocalStorage {
             return false;
         }
     }
+    limpiar() {
+        this.respuestas.forEach((respuesta) => {
+            localStorage.removeItem(respuesta.idpregunta);
+        });
+        return true;
+    }
 }
