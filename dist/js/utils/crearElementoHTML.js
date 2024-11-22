@@ -1,10 +1,1 @@
-//Crea elementos HTML recibiendo etiqueta, clase , contenido e id (opcional)
-export function crearElementoHTML(etiqueta, clase = "", contenido = "", id = "", innerHTML = "") {
-    const elemento = document.createElement(etiqueta);
-    clase && elemento.classList.add(clase);
-    elemento.textContent = contenido;
-    id ? (elemento.id = id) : null;
-    innerHTML ? (elemento.innerHTML = contenido + innerHTML) : null;
-    return elemento;
-}
-//# sourceMappingURL=crearElementoHTML.js.map
+function t(t,e="",n="",r="",c=""){t=document.createElement(t);return e&&t.classList.add(e),t.textContent=n,r&&(t.id=r),c&&(t.innerHTML=n+c),t}export{t as crearElementoHTML};

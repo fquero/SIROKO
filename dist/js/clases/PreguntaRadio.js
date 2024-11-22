@@ -1,38 +1,6 @@
-import { crearElementoHTML } from "../utils/crearElementoHTML.js";
-export class PreguntaRadio {
-    titular;
-    descripcion;
-    textoPregunta;
-    opciones;
-    constructor(titular, descripcion, textoPregunta, opciones) {
-        this.titular = titular;
-        this.descripcion = descripcion;
-        this.textoPregunta = textoPregunta;
-        this.opciones = opciones;
-    }
-    getTitular() {
-        return this.titular;
-    }
-    getDescrip() {
-        return this.descripcion;
-    }
-    getTextoPregunta() {
-        return this.textoPregunta;
-    }
-    renderizarInput(idpregunta) {
-        const form = crearElementoHTML("form", "formulario");
-        for (const [key, opcion] of Object.entries(this.opciones)) {
-            const op = crearElementoHTML("div", "opcion");
-            const checked = key == "0" ? "checked" : ""; //Requisito: el primer valor es el que se selecciona por defecto
-            op.innerHTML = `
-        <input type="radio" class="opcion__radio-input" id="op${key}" data-pregunta="SirokoP${idpregunta}" name="PreguntaSiroko" value="${opcion.valor}" ${checked} />
-        <label for="op${key}" class="opcion__radio-label">
+import{crearElementoHTML as a}from"../utils/crearElementoHTML.js";class t{titular;descripcion;textoPregunta;opciones;constructor(t,r,e,o){this.titular=t,this.descripcion=r,this.textoPregunta=e,this.opciones=o}getTitular(){return this.titular}getDescrip(){return this.descripcion}getTextoPregunta(){return this.textoPregunta}renderizarInput(t){var r,e,o=a("form","formulario");for([r,e]of Object.entries(this.opciones)){var i=a("div","opcion");i.innerHTML=`
+        <input type="radio" class="opcion__radio-input" id="op${r}" data-pregunta="SirokoP${t}" name="PreguntaSiroko" value="${e.valor}" ${"0"==r?"checked":""} />
+        <label for="op${r}" class="opcion__radio-label">
           <span class="opcion__radio-button"></span>
-          ${opcion.texto}
-        </label>`;
-            form.append(op);
-        }
-        return form;
-    }
-}
-//# sourceMappingURL=PreguntaRadio.js.map
+          ${e.texto}
+        </label>`,o.append(i)}return o}}export{t as PreguntaRadio};
