@@ -54,3 +54,4 @@ export const preguntas = [
         ],
     },
 ];
+//# sourceMappingURL=preguntas.js.map

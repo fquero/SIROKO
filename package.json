@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/node": "^22.9.0",
     "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^3.0.0",
     "gulp-image-resize": "^0.13.1",
     "gulp-imagemin": "^9.1.0",

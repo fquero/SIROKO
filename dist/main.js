@@ -60,3 +60,4 @@ function eventosCupon() {
     const btnCopiar = document.querySelector(".codigo");
     btnCopiar.addEventListener("click", copiarCupon);
 }
+//# sourceMappingURL=main.js.map

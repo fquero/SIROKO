@@ -7,3 +7,4 @@ export function crearElementoHTML(etiqueta, clase = "", contenido = "", id = "",
     innerHTML ? (elemento.innerHTML = contenido + innerHTML) : null;
     return elemento;
 }
+//# sourceMappingURL=crearElementoHTML.js.map

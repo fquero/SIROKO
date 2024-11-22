@@ -15,10 +15,6 @@ import uglify from "gulp-uglify";
 
 //Rutas
 const paths = {
-  index: {
-    src: "./src/index.html",
-    dest: "./dist",
-  },
   style: {
     sass: "./src/sass/**/*.scss",
     css: "./dist/css",
@@ -229,6 +225,22 @@ function compilaTsFiles() {
   return gulp
     .src(paths.ts.src)
     .pipe(tsProject())
+    .pipe(
+      uglify({
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+          passes: 3,
+        },
+        mangle: {
+          toplevel: true,
+        },
+        output: {
+          beautify: false,
+          comments: false,
+        },
+      })
+    )
     .pipe(gulp.dest(paths.ts.dest));
 }
 
@@ -239,3 +251,6 @@ function watchTsFiles() {
   gulp.watch(paths.ts.src, compilaTs);
 }
 export const watchTs = watchTsFiles;
+
+//////////////////////////////////////    BUILD      /////////////////////////////////////////////////
+function build() {}

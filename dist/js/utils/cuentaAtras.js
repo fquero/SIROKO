@@ -35,3 +35,4 @@ export const iniciarCuentaAtras = function (horaInicio, minutos, clase_reloj, ca
         }
     }, 1000);
 };
+//# sourceMappingURL=cuentaAtras.js.map
